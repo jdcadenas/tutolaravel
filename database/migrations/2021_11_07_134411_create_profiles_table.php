@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('instagram')->nullable();
-            $table->string('gihub')->nullable();
+            $table->string('github')->nullable();
             $table->string('web')->nullable();
             $table->timestamps();
         });

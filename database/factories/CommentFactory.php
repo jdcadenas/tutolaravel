@@ -14,7 +14,10 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'body'=> $this->faker->text(),
+            'user_id' => rand(1,5),
+
+
         ];
     }
 }

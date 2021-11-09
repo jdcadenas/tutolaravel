@@ -15,7 +15,7 @@ class AddLevelIdAtUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
           //  $table->unsignedBigInteger('level_id')->nullable()->after('id');
-            $table->foreignId('level_id')->nullable()->after('id')->constrained()->onUpdate('cascade')->onDelete('set null');
+            $table->foreignId('level_id')->nullable()->after('id')->onUpdate('cascade')->onDelete('set null');
         });
     }
 
