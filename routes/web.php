@@ -15,14 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
     $users = User::get();
 
-    return view('dashboard', ['users' => $users]);
-    
+    return view('welcome', ['users' => $users]);
+
+   
+});
+
+Route::get('/profile/{id}', function ($id) {
+    $user = User::find($id);
+
+    return view('profile', ['user' => $user]);
+
+})->name('profile');
+
+Route::get('/dashboard', function () {
+  
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
